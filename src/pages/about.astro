@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Mailinh TA" description="About Mailinh TA">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Découvrez mon parcours et mes compétences"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Mailinh"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Étudiante passionnée en informatique à l'Efrei, je suis motivée par les défis technologiques. Rigoureuse et curieuse, j'aime innover et résoudre des problèmes. Ma capacité d'adaptation et mon esprit d'équipe font de moi une collaboratrice efficace. Impliquée dans des projets extrascolaires, je suis polyvalente et prête à contribuer à des initiatives innovantes.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Expériences</h2>
+				<div class="content">
+					<p>- Stage commercial à Pandora Gare St-Lazare Paris : Vendeuse</p>
+					<p>- Stage executif à la Cité Maraichère : Animatrice </p>
+					<p>- Pigiste dans le site de popculture TVHLAND </p>
+					<p>- Vendeuse de produits de Beaux-Arts chez TVHLAND </p>
+					<p>- Stage d'obeservation chez Fleurus Edition </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>- Formation ingénieur en informatique à l'EFREI, grande école du numérique en cursus international</p>
+					<p>- Classe Préparatoire aux grandes écoles spécialisé Physique Chimie Science de l'ingénieur à l'école nationale de physique chimie et biologie ENCPB </p>
+					<p>- Baccalauréat au lycée Lavoisier avec mention assez bien. Spécialité : Mathématiques, Physique-Chimie, NSI</p>
+					<p>- Etude Chinoise au lycée Henri IV</p>
+					<p>- Brevet des collèges avec mention très bien</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Travail d'équipe - Feuilles de style en cascade CSS - MySql - PhpMyAdmin - Php - C (langage de programmation) - Python (langage de programmation - Conseil - Vendeuse - Journaliste - Conception Créative - Photographie - Commerce de détail - Service Client - Gestion des ventes - Curieuse - Créative - Autonome - Organisée - Dynamique</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Associations</h2>
+				<div class="content">
+					<p>- Association Horizon en tant qu'Eprof où je rédige des contenus pédagogiques destinés aux étudiants et je donne des cours en Mathématiques et en Physique </p>
+					<p>- Association EFREI Internationale : Marraine d'étudiant chinois</p>
+					<p>- Association 4ESPORT : fondatrice du pôle Splatoon </p>
+					<p>- Association ArtEfrei : Coordinatrice entre l'assocation et d'un fournisseur de matériels d'arts</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Langues</h2>
+				<div class="content">
+					<p>- Français </p>
+					<p>- Anglais </p>
+				</div>
+			</section>
+			<section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
